@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import { ref, watch, computed } from 'vue'
+import { ref, watch, computed, onMounted } from 'vue'
 import { useState } from '@/stores/state.js'
 
 const state = useState()
@@ -39,6 +39,14 @@ watch(isAudioPlay, (newVal) => {
     audioEl.value.play()
   } else {
     audioEl.value.pause()
+  }
+})
+
+onMounted(() => {
+  if (isPlayed.value) {
+    audioEl.value.play().catch((error) => {
+      console.error('Autoplay failed:', error)
+    })
   }
 })
 
