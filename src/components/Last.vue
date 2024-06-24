@@ -30,7 +30,7 @@
             <transition name="fade-in">
               <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-black bg-opacity-50">
                 <p class="text-sm text-white mb-2">
-                  We would like to thank you for sharing in our wedding celebration. We are grateful for your presence, warm wishes, and your generous gift. We look forward to our future together and to making more memories with you.
+                  We would like to thank you for sharing in our wedding celebration. We are grateful for your presence, warm wishes, and your generous gift. We look forward to our future together and to make more memories with you.
                 </p>
                 <p class="text-sm text-white mt-2 font-mono" style="font-style: italic;">Yang Berbahagia</p>
                 <p class="text-sm text-white" style="font-family: 'Great Vibes', cursive; font-size: 25px; margin-top: 10px;">Rio & Rosi</p>
