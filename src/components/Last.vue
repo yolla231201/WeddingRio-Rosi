@@ -2,7 +2,8 @@
   <section class="w-full mb-12">
     <wave class="w-full"></wave>
     <section class="container-section mx-auto px-4">
-      <Card title="Kisah kami berawal dari">
+      <HeaderSection title="Turut Mengundang"></HeaderSection>
+      <Card>
         <template v-slot:body>
           <div class="p-6 text-center">
             <p class="text-sm font-bold mb-4">Keluarga Besar Pria</p>
