@@ -1,19 +1,4 @@
-<style scoped>
-.button {
-  @apply bg-gray-600 bg-opacity-50 backdrop-blur-sm border border-gray-800 rounded-full text-lg grid place-items-center left-3 text-amber-100 z-50 mb-2;
-  height: 40px;
-  width: 40px;
-}
-
-.button i {
-  color: black;
-}
-</style>
-
 <template>
-  <audio ref="audioEl" autoplay>
-    <source src="@/assets/audio/backsound.mp3" type="audio/mp3">
-  </audio>
   <section class="fixed bottom-24 pl-2">
     <button class="button" @click="control">
       <i v-if="!isPlayed" class="fa-solid fa-volume-off"></i>
@@ -23,28 +8,55 @@
       <i class="fa-solid fa-gift"></i>
     </button> -->
   </section>
+  <audio ref="audioEl" autoplay loop>
+    <source src="@/assets/audio/backsound.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import { useState } from '@/stores/state.js'
 
 const state = useState()
 
 const audioEl = ref(null)
-const isPlayed = ref(false)
+const isPlayed = ref(true)  // Default to true to start playing on load
 
 const isAudioPlay = computed(() => state.isAudioPlay)
 
-const audioClick = () => isPlayed.value = !isPlayed.value
-const audioAction = () => isPlayed.value ? audioEl.value.play() : audioEl.value.pause()
-
 const control = () => {
-  audioClick()
-  audioAction()
+  isPlayed.value = !isPlayed.value
+  if (isPlayed.value) {
+    audioEl.value.play()
+  } else {
+    audioEl.value.pause()
+  }
 }
 
-watch(isAudioPlay, control)
+watch(isAudioPlay, (newVal) => {
+  if (newVal) {
+    audioEl.value.play()
+  } else {
+    audioEl.value.pause()
+  }
+})
 
-const giftAction = () => setTimeout(() => { document.querySelector('#envelope').scrollIntoView({ behavior: 'smooth' }) }, 300)
+const giftAction = () => {
+  setTimeout(() => {
+    document.querySelector('#envelope').scrollIntoView({ behavior: 'smooth' })
+  }, 300)
+}
 </script>
+
+<style scoped>
+.button {
+  @apply bg-gray-600 bg-opacity-50 backdrop-blur-sm border border-gray-800 rounded-full text-lg grid place-items-center text-amber-100 z-50 mb-2;
+  height: 40px;
+  width: 40px;
+}
+
+.button i {
+  color: black;
+}
+</style>
