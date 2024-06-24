@@ -44,7 +44,7 @@ const createTimer = (target, container, cb) => {
 }
 
 const timer = setInterval(() => {
-  createTimer(new Date('2024-07-23 08:30').getTime(), countdown, () => {
+  createTimer(new Date('2024-07-02 19:00').getTime(), countdown, () => {
     clearInterval(timer)
   })
 }, 1000)
