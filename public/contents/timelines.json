@@ -1,0 +1,27 @@
+{
+	"timelines": [
+		{
+			"title": "Malam Adat",
+			"date": "Senin, 01 Juli 2024",
+			"time": "18:00 WITA - Selesai",
+			"location": "Rumah Mempelai Wanita",	
+			"address": "Rumah Bapak Maximus Lale Kefi - Desa Oelneke - Kecamatan Musi"
+		},
+		{
+			"title": "Pemberkatan Nikah",
+			"date": "Selasa, 02 Juli 2024",
+			"time": "16.00 WITA - Selesai",
+			"location": "Kapela Santo Aloysisus Oelneke",
+			"address": "Desa Oelneke - Kecamatan Musi"
+		},
+		{
+			"title": "Resepsi Nikah",
+			"date": "Selasa, 02 Juli 2024",
+			"time": "19.00 WITA - Selesai",
+			"location": "Rumah Mempelai Wanita",
+			"address": "Rumah Bapak Maximus Lale Kefi - Desa Oelneke - Kecamatan Musi"
+
+		}
+		
+	]
+}

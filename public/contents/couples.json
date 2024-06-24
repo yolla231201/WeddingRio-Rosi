@@ -1,0 +1,26 @@
+{
+	"couples": [
+		{
+			"name": "Silvestrio Bago",
+			"sosmed": [
+				{ "icon": "fab fa-instagram", "link": "http://fake.com" },
+				{ "icon": "fab fa-facebook", "link": "http://fake.com" },
+				{ "icon": "fab fa-twitter", "link": "http://fake.com" }
+			],
+			"parents": ["Martinus Bago (Alm)", "Fabiola Hilaria Us Olin (Almh)"],
+			"thumb": "/couples/couple-male.jpg",
+			"address": "Eban - Kecamatan Miomaffo Barat, Kefamenanu"
+		},
+		{
+			"name": "Petronela Rosilitas Kefi",
+			"sosmed": [
+				{ "icon": "fab fa-instagram", "link": "http://fake.com" },
+				{ "icon": "fab fa-facebook", "link": "http://fake.com" },
+				{ "icon": "fab fa-twitter", "link": "http://fake.com" }
+			],
+			"parents": ["Maximus Lale Kefi ", "Maria Nona Witin"],
+			"thumb": "/couples/couple-female.jpg",
+			"address": "Desa Oelneke - Kecamatan Musi, Kefamenanu"
+		}
+	]
+}
