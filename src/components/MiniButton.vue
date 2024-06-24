@@ -8,7 +8,7 @@
       <i class="fa-solid fa-gift"></i>
     </button> -->
   </section>
-  <audio ref="audioEl" autoplay loop>
+  <audio ref="audioEl" loop>
     <source src="@/assets/audio/backsound.mp3" type="audio/mp3">
     Your browser does not support the audio element.
   </audio>
@@ -21,7 +21,7 @@ import { useState } from '@/stores/state.js'
 const state = useState()
 
 const audioEl = ref(null)
-const isPlayed = ref(true)  // Default to true to start playing on load
+const isPlayed = ref(false)  // Default to false, we'll start playing on user interaction
 
 const isAudioPlay = computed(() => state.isAudioPlay)
 
@@ -42,12 +42,21 @@ watch(isAudioPlay, (newVal) => {
   }
 })
 
-onMounted(() => {
-  if (isPlayed.value) {
-    audioEl.value.play().catch((error) => {
-      console.error('Autoplay failed:', error)
+const playAudioOnInteraction = () => {
+  if (!isPlayed.value) {
+    audioEl.value.play().then(() => {
+      isPlayed.value = true
+    }).catch((error) => {
+      console.error('Playback failed:', error)
     })
   }
+}
+
+onMounted(() => {
+  // Add event listeners to detect user interaction
+  document.addEventListener('click', playAudioOnInteraction, { once: true })
+  document.addEventListener('scroll', playAudioOnInteraction, { once: true })
+  document.addEventListener('keypress', playAudioOnInteraction, { once: true })
 })
 
 const giftAction = () => {
